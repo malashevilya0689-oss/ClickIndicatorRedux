@@ -1,0 +1,111 @@
+{
+	"geode": "5.0.0-beta.3",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "fenit.click_indicator_redux",
+	"name": "Click Indicator Redux",
+	"version": "1.0.0",
+	"developer": "fenit",
+	"description": "Real-time physics click window indicator, 3D rhythm highway & ms accuracy tracker for GD 2.2081.",
+	"settings": {
+		"enabled": {
+			"name": "Enable Mod",
+			"description": "Включить визуальный индикатор кликов и 3D-дорожку.",
+			"type": "bool",
+			"default": true
+		},
+		"safe-mode": {
+			"name": "Safe Mode",
+			"description": "Блокирует сохранение прогресса, звезд и рекордов при прохождении уровня.",
+			"type": "bool",
+			"default": true
+		},
+		"auto-safe-mode": {
+			"name": "Auto Safe Mode",
+			"description": "Автоматически включать Safe Mode, если индикатор был активен хотя бы один кадр за попытку.",
+			"type": "bool",
+			"default": true
+		},
+		"solver-mode": {
+			"name": "Click Calculation Mode",
+			"description": "Auto-Solver (просчет физики и хитбоксов в реальном времени) или Hybrid (просчет + запись твоих успешных кликов).",
+			"type": "string",
+			"default": "Hybrid (Solver + Recorded)",
+			"one-of": [
+				"Hybrid (Solver + Recorded)",
+				"Real-Time Auto-Solver Only",
+				"Recorded Clicks Only"
+			]
+		},
+		"show-world-bars": {
+			"name": "Show World Laser Bars",
+			"description": "Отрисовывать вертикальные линии и зеленые окна тайминга прямо в уровне.",
+			"type": "bool",
+			"default": true
+		},
+		"show-highway": {
+			"name": "Show 3D Highway HUD",
+			"description": "Отрисовывать 3D-дорожку слева на экране с оценкой кликов в мс.",
+			"type": "bool",
+			"default": true
+		},
+		"primary-color": {
+			"name": "Indicator Color",
+			"description": "Основной цвет лазеров, окон и 3D-дорожки.",
+			"type": "color",
+			"default": "#1aff66"
+		},
+		"window-opacity": {
+			"name": "Window Zone Opacity",
+			"description": "Прозрачность широкой зоны допустимого окна клика (0 - невидимо, 255 - максимум).",
+			"type": "int",
+			"default": 55,
+			"min": 5,
+			"max": 255
+		},
+		"laser-opacity": {
+			"name": "Laser Line Opacity",
+			"description": "Яркость центральной линии идеального тайминга.",
+			"type": "int",
+			"default": 230,
+			"min": 20,
+			"max": 255
+		},
+		"glow-intensity": {
+			"name": "Neon Glow Width",
+			"description": "Ширина неонового свечения вокруг линий.",
+			"type": "float",
+			"default": 4.5,
+			"min": 1.0,
+			"max": 12.0
+		},
+		"highway-scale": {
+			"name": "3D Highway Scale",
+			"description": "Масштаб 3D-дорожки слева на экране.",
+			"type": "float",
+			"default": 1.0,
+			"min": 0.5,
+			"max": 2.0
+		},
+		"highway-x": {
+			"name": "3D Highway X Offset",
+			"description": "Позиция 3D-дорожки по горизонтали.",
+			"type": "float",
+			"default": 62.0,
+			"min": 25.0,
+			"max": 300.0
+		},
+		"lookahead-distance": {
+			"name": "Lookahead Distance (Units)",
+			"description": "На сколько блоков вперед просчитывать клики в реальном времени.",
+			"type": "float",
+			"default": 650.0,
+			"min": 250.0,
+			"max": 1500.0
+		}
+	}
+}
