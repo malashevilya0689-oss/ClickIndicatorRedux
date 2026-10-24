@@ -76,7 +76,7 @@ public:
             if (!go) continue;
 
  auto t = go->m_objectType;
-            bool isOrb = go->m_isRing;
+bool isOrb = (go->m_objectType == GameObjectType::Special);
             bool isHazard = (t == GameObjectType::Hazard || t == GameObjectType::AnimatedHazard || go->m_hasNoGlow);
             if (isOrb || isHazard) {  
                 float w = go->getContentSize().width * std::abs(go->getScaleX());
