@@ -75,25 +75,10 @@ public:
             auto go = typeinfo_cast<GameObject*>(pl->m_objects->objectAtIndex(i));
             if (!go) continue;
 
-            auto t = go->m_objectType;
-            bool isOrb = (
-                t == GameObjectType::YellowOrb ||
-                t == GameObjectType::PinkOrb ||
-                t == GameObjectType::RedOrb ||
-                t == GameObjectType::BlueOrb ||
-                t == GameObjectType::GreenOrb ||
-                t == GameObjectType::BlackOrb ||
-                t == GameObjectType::GreenDashOrb ||
-                t == GameObjectType::PinkDashOrb ||
-                t == GameObjectType::SpiderOrb
-            );
-
-            bool isHazard = (
-                t == GameObjectType::Hazard ||
-                t == GameObjectType::AnimatedHazard
-            );
-
-            if (isOrb || isHazard) {
+ auto t = go->m_objectType;
+            bool isOrb = go->m_isRing;
+            bool isHazard = (t == GameObjectType::Hazard || t == GameObjectType::AnimatedHazard || go->m_hasNoGlow);
+            if (isOrb || isHazard) {  
                 float w = go->getContentSize().width * std::abs(go->getScaleX());
                 float h = go->getContentSize().height * std::abs(go->getScaleY());
                 if (w <= 1.0f) w = 30.0f;
